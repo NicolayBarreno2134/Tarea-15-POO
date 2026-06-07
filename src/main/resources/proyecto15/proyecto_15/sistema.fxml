@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="proyecto15.proyecto_15.Controller"
+            style="-fx-background-color: #0d0d1a;">
+
+    <top>
+        <VBox alignment="CENTER" style="-fx-background-color: #0d0d1a; -fx-padding: 15 0 5 0; -fx-border-color: #ff2d78; -fx-border-width: 0 0 2 0;">
+            <Label text="SISTEMA ESTUDIANTIL"
+                   style="-fx-font-size: 28px; -fx-text-fill: #ff2d78; -fx-font-weight: bold; -fx-font-family: 'Courier New';"/>
+            <Label text="Encuesta + Calculos Matematicos | JavaFX"
+                   style="-fx-font-size: 12px; -fx-text-fill: #888888; -fx-font-family: 'Courier New';"/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="15" style="-fx-padding: 15; -fx-background-color: #0d0d1a;">
+
+            <VBox spacing="8" HBox.hgrow="ALWAYS"
+                  style="-fx-padding: 15; -fx-background-color: #11112a; -fx-border-color: #7b2fff; -fx-border-width: 1.5; -fx-border-radius: 4;">
+
+                <Label text="ENCUESTA ESTUDIANTIL"
+                       style="-fx-font-size: 14px; -fx-text-fill: #a855f7; -fx-font-weight: bold; -fx-font-family: 'Courier New'; -fx-padding: 0 0 8 0; -fx-border-color: #7b2fff; -fx-border-width: 0 0 1 0;"/>
+
+                <Label text="Nombre completo:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <TextField fx:id="nombreTextField"
+                           style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #7b2fff; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-pref-height: 32;"/>
+
+                <Label text="Edad:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <TextField fx:id="edadTextField"
+                           style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #7b2fff; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-pref-height: 32;"/>
+
+                <Label text="Carrera:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <ComboBox fx:id="categoriaCarrera" maxWidth="1.7976931348623157E308"
+                          style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #7b2fff; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px;"/>
+
+                <Label text="Nivel / Semestre:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <ComboBox fx:id="categoriaSemestre" maxWidth="1.7976931348623157E308"
+                          style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #7b2fff; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px;"/>
+
+                <Label text="Materias:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <ListView fx:id="materias" prefHeight="120"
+                          style="-fx-background-color: #1a1a35; -fx-border-color: #7b2fff; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-text-fill: #cccccc;"/>
+
+                <HBox spacing="10" style="-fx-padding: 5 0 0 0;">
+                    <Button fx:id="botonRegistrar"
+                            text="Registrar"
+                            onAction="#registrar"
+                            style="-fx-background-color: transparent; -fx-text-fill: #a855f7; -fx-border-color: #a855f7; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-pref-height: 32; -fx-cursor: hand;"/>
+                    <Button fx:id="botonLimpiar"
+                            text="Limpiar"
+                            onAction="#limpiar"
+                            style="-fx-background-color: transparent; -fx-text-fill: #888888; -fx-border-color: #555555; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-pref-height: 32; -fx-cursor: hand;"/>
+                </HBox>
+
+                <Label fx:id="labelRegistroEncuesta"
+                       text="Registro guardado correctamente para: "
+
+                       style="-fx-font-size: 12px; -fx-text-fill: #a855f7; -fx-font-family: 'Courier New'; -fx-wrap-text: true;"/>
+            </VBox>
+
+            <VBox spacing="8" HBox.hgrow="ALWAYS"
+                  style="-fx-padding: 15; -fx-background-color: #11112a; -fx-border-color: #ff2d78; -fx-border-width: 1.5; -fx-border-radius: 4;">
+
+                <Label text="CALCULADORA MATEMATICA"
+                       style="-fx-font-size: 14px; -fx-text-fill: #ff2d78; -fx-font-weight: bold; -fx-font-family: 'Courier New'; -fx-padding: 0 0 8 0; -fx-border-color: #ff2d78; -fx-border-width: 0 0 1 0;"/>
+
+                <Label text="Numero 1:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <TextField fx:id="numero1TextField"
+                           style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #ff2d78; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-pref-height: 32;"/>
+
+                <Label text="Numero 2:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <TextField fx:id="numero2TextField"
+                           style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #ff2d78; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-pref-height: 32;"/>
+
+                <Label text="Operacion:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <ComboBox fx:id="operacionComboBox" maxWidth="1.7976931348623157E308"
+                          style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #ff2d78; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px;"/>
+
+                <Label text="Resultado:"
+                       style="-fx-font-size: 11px; -fx-text-fill: #666688; -fx-font-family: 'Courier New';"/>
+                <TextField fx:id="resultadoTextField" editable="false"
+                           style="-fx-background-color: #0a1a12; -fx-text-fill: #00ff88; -fx-border-color: #00ff88; -fx-border-width: 1.5; -fx-font-family: 'Courier New'; -fx-font-size: 15px; -fx-font-weight: bold; -fx-pref-height: 36;"/>
+
+                <HBox spacing="8" style="-fx-padding: 2 0;">
+                    <Button fx:id="botonCalcular" text="Calcular" onAction="#calcular"
+                            style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #555577; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 12px; -fx-pref-height: 30; -fx-cursor: hand;"/>
+                    <Button fx:id="botonLimpiarCalc" text="Limpiar" onAction="#limpiarCalc"
+                            style="-fx-background-color: #1a1a35; -fx-text-fill: #cccccc; -fx-border-color: #555577; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 12px; -fx-pref-height: 30; -fx-cursor: hand;"/>
+                    <Button fx:id="botonHistorial" text="Al historial" onAction="#agregarHistorial"
+                            style="-fx-background-color: #1a1a35; -fx-text-fill: #a855f7; -fx-border-color: #a855f7; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 12px; -fx-pref-height: 30; -fx-cursor: hand;"/>
+                </HBox>
+
+                <Label fx:id="ultimoCalculoLabel" text="Ultimo calculo: 25.0 + 10.0 = 35"
+                       style="-fx-text-fill: #00ff88; -fx-font-family: 'Courier New'; -fx-font-size: 12px;"/>
+
+                <Label text="HISTORIAL DE OPERACIONES"
+                       style="-fx-font-size: 12px; -fx-text-fill: #ff2d78; -fx-font-weight: bold; -fx-font-family: 'Courier New';"/>
+                <ListView fx:id="historialListView" prefHeight="120"
+                          style="-fx-background-color: #1a1a35; -fx-border-color: #ff2d78; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-text-fill: #cccccc;"/>
+
+                <Button fx:id="botonBorrarHistorial" text="Borrar Historial" onAction="#borrarHistorial"
+                        style="-fx-background-color: transparent; -fx-text-fill: #ff2d78; -fx-border-color: #ff2d78; -fx-border-width: 1; -fx-font-family: 'Courier New'; -fx-font-size: 13px; -fx-pref-height: 32; -fx-cursor: hand; -fx-max-width: Infinity;"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <Label fx:id="labelRegistro"
+               text="Registro: "
+               style="-fx-padding: 8 15; -fx-text-fill: #00ffaa; -fx-font-size: 12px; -fx-font-family: 'Courier New'; -fx-background-color: #0a0a18; -fx-border-color: #333355; -fx-border-width: 1 0 0 0;"
+               maxWidth="1.7976931348623157E308"
+               BorderPane.alignment="CENTER_LEFT"/>
+    </bottom>
+
+</BorderPane>
